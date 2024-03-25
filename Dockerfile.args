@@ -1,0 +1,11 @@
+# ------------------------------------------------------------------------------
+# Builder Stage
+# ------------------------------------------------------------------------------
+FROM golang:1.20-bullseye AS build
+
+WORKDIR /build
+
+ARG CGO_ENABLED
+ENV CGO_ENABLED ${CGO_ENABLED}
+
+RUN env | grep GO
